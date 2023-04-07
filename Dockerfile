@@ -1,4 +1,4 @@
-FROM node:14.17.0-alpine3.13
+FROM node:18-alpine3.17
 
 WORKDIR /app
 
@@ -9,7 +9,7 @@ RUN npm install -g @angular/cli
 COPY . .
 
 # Install dependencies
-RUN npm install
+RUN npm install && rm -rf node_modules
 
 # Expose port 4200 for the development server
 EXPOSE 4200
