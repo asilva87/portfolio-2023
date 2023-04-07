@@ -14,3 +14,12 @@ quote_type = single
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+# The "".editorconfig" file is used to define and maintain consistent coding styles and formatting across
+# different editors and IDEs. It is a simple configuration file that defines a set of rules for various
+# aspects of code formatting such as indentation, line spacing, character encoding, and others.
+
+# The rules defined in the .editorconfig file can be shared between different members of a development team
+# or across different projects. This ensures that the code maintains a consistent style regardless of the
+# editor or IDE being used. By using this file, developers can save time and avoid inconsistencies in the 
+# code formatting.

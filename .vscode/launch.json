@@ -18,3 +18,27 @@
     }
   ]
 }
+
+// The "launch.json" file is used to configure the debugging process in Visual Studio Code. It specifies 
+// the configuration settings for debugging an application, such as which files to launch, how to launch
+// them, and what arguments to pass to the application. This file is typically used in combination with
+// the "Debug" panel in the IDE to run and debug an Angular application.
+
+// The "launch.json" file is created automatically by the Angular CLI when you generate a new Angular
+// project with the ng new command, and it can be customized as needed depending on your specific debugging
+// requirements.
+
+// This launch.json file contains two configurations for debugging an Angular application using the Visual
+// Studio Code editor.
+
+// The first configuration is named "ng serve" and is configured to launch the application in the Chrome
+// browser using the Progressive Web Apps (PWA) debugger. The "type" property is set to pwa-chrome, and the
+// "url" property is set to the URL where the Angular application is served, typically at http://localhost:4200/.
+// The "preLaunchTask" property is set to "npm: start", which means that before launching the application,
+// the "npm start" command will be executed to start the development server.
+
+// The second configuration is named "ng test" and is configured to launch the tests in the Chrome browser
+// debugger. The "type" property is set to chrome, and the "url" property is set to the URL where the Karma
+// test runner is served, typically at http://localhost:9876/debug.html. The "preLaunchTask" property is set
+// to "npm: test", which means that before launching the tests, the npm test command will be executed to start
+// the test runner.

@@ -2,3 +2,18 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": ["angular.ng-template"]
 }
+
+// The ".vscode/extensions.json" file is used to manage extensions in Visual Studio Code (VS Code).
+// It allows you to specify a set of recommended extensions for your project or workspace. A good set of
+// extensions can make working with a particular workspace or programming language more productive and
+// you'd often like to share this list with your team or colleagues, so that the installation of these
+// extensions is automated.
+
+// The "extensions.json" file can contain an object with two properties: "recommendations" and 
+// "unwantedRecommendations". The "recommendations" property is used to specify a list of extension IDs
+// that are recommended for the project, while the "unwantedRecommendations" property is used to specify
+// a list of extension IDs that should not be recommended.
+
+// When someone opens the project in VS Code, they will see a notification prompting them to install the
+// recommended extensions. They can choose to install them all at once or pick and choose which ones to
+// install.

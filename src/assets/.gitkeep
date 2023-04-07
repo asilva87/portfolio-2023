@@ -1,0 +1,3 @@
+# This file exists solely for git to track empty folders.
+# By default, git doesn't track empty folders.
+# Once the folder isn't empty anymore, this file can be removed.
