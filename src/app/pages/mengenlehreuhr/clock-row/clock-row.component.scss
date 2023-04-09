@@ -1,0 +1,23 @@
+.clock-row {
+  display: flex;
+  justify-content: center;
+}
+
+.active {
+  background-color: orange;
+}
+
+.active-dark {
+  background-color: orangered;
+}
+
+.large-cell {
+  width: 2rem;
+  height: 2rem;
+  border: 1px black solid;
+}
+
+.small-cell {
+  @extend .large-cell;
+  width: 1rem;
+}

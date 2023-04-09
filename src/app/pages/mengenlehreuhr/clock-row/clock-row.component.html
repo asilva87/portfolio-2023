@@ -1,0 +1,9 @@
+<div class="clock-row">
+  <!-- Cells -->
+  <div
+    *ngFor="let i of rangeValues"
+    [ngClass]="{ 'large-cell': largeCell, 'small-cell': !largeCell }"
+    [class.active]="getColorRule('active', i)"
+    [class.active-dark]="getColorRule('active-dark', i)">
+  </div>
+</div>

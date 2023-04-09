@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component';
+import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    MengenlehreuhrComponent
+    MengenlehreuhrComponent,
+    ClockRowComponent
   ],
   imports: [
     BrowserModule,
