@@ -1,22 +1,30 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component';
 import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.component';
+import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
+    ClockRowComponent,
     MengenlehreuhrComponent,
-    ClockRowComponent
+    NavbarComponent,
   ],
   imports: [
+    AppRoutingModule,
+    BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
