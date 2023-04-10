@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScriptConverterComponent } from './pages/script-converter/script-converter.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ClockRowComponent,
     MengenlehreuhrComponent,
     NavbarComponent,
+    ScriptConverterComponent,
   ],
   imports: [
     AppRoutingModule,
