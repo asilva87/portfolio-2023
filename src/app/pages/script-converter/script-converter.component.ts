@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
 import { dictionary } from 'cmu-pronouncing-dictionary'
-import latCyr from './util/lat-cyr'; // Dictionary from ARPABET's phonemes to my own approximation in Russian cyrillic.
+
+import latCyr from './util/lat-cyr' // Dictionary from ARPABET's phonemes to my own approximation in Russian cyrillic.
 
 @Component({
   selector: 'app-script-converter',
@@ -20,7 +21,10 @@ export class ScriptConverterComponent {
     // Done before trimming as to not miss it.
     const lastCharWasSpace = inputText[inputText.length - 1] === ' '
     // String input turned into an array, after remove stress numbers and trimming.
-    let inputTextArr: string[] = inputText.trim().replace(/\s+/g, ' ').split(' ')
+    let inputTextArr: string[] = inputText
+      .trim()
+      .replace(/\s+/g, ' ')
+      .split(' ')
 
     if (inputTextArr) {
       for (let i = 0; i < inputTextArr.length; i++) {
@@ -38,7 +42,9 @@ export class ScriptConverterComponent {
         // been found are specially marked in the template.
         if (lastCharWasSpace && dictionary[inputTextArr[i]]) {
           this.convertedWords[i] = {
-            word: this.getCyrillicConversion(dictionary[inputTextArr[i]].replace(/[0-9]/g, '')),
+            word: this.getCyrillicConversion(
+              dictionary[inputTextArr[i]].replace(/[0-9]/g, '')
+            ),
             isWrong: false
           }
         }
@@ -46,7 +52,7 @@ export class ScriptConverterComponent {
         // If word hasn't been found, then push it to the array of converted words anyway, but mark
         // it was a wrong word, so that it can't been displayed differently in the template.
         if (!dictionary[inputTextArr[i]]) {
-          this.convertedWords[i] = { word: inputTextArr[i], isWrong: true}
+          this.convertedWords[i] = { word: inputTextArr[i], isWrong: true }
         }
       }
     }

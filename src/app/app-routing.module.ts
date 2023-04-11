@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component';
+import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component';
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component';
 
 const routes: Routes = [
   { path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
-  { path: 'script-converter', component: ScriptConverterComponent }
+  { path: 'roman-numerals-converter', component: RomanNumeralsConverterComponent },
+  { path: 'script-converter', component: ScriptConverterComponent },
 ];
 
 @NgModule({

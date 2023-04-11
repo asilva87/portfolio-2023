@@ -1,0 +1,30 @@
+<mat-form-field class="example-form-field" [formGroup]="myForm">
+  <mat-label>Enter a number</mat-label>
+  <input
+    matInput
+    type="text"
+    formControlName="myNumberInput"
+    (keydown)="onKeyDown($event)"
+    (input)="convertToRoman($event)"
+    aria-label="Input text for indo-arabic numeral"
+    [errorStateMatcher]="matcher"
+    color="accent"
+  />
+  <button *ngIf="myForm.get('myNumberInput')?.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+    <mat-icon>close</mat-icon>
+  </button>
+  <mat-error *ngIf="myForm.get('myNumberInput')?.invalid">
+    Please enter a valid number
+  </mat-error>
+</mat-form-field>
+<mat-slide-toggle
+  [(ngModel)]="useApostrophus"
+  (ngModelChange)="onToggleChange()"
+  matTooltip="Toggles between Apostrophus and Vinculum glyphs for numbers above 3999."
+  #tooltip="matTooltip"
+  matTooltipPosition="below"
+  aria-label="Toggle that switches between mediaevel Apostrophus and Vinculum glyphs for numbers above 3999"
+>
+  Use apostrophus
+</mat-slide-toggle>
+<h1>{{romanNumber}}</h1>
