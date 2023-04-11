@@ -17,7 +17,8 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
-import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
+import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component';
+import { DisplayCellComponent } from './components/display-cell/display-cell.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converte
     MengenlehreuhrComponent,
     NavbarComponent,
     ScriptConverterComponent,
-    RomanNumeralsConverterComponent
+    RomanNumeralsConverterComponent,
+    DisplayCellComponent
   ],
   imports: [
     AppRoutingModule,
