@@ -1,0 +1,36 @@
+<div  class="calc-display">
+  <app-display-cell *ngFor="let number of secondaryDisplayValue" [numberToDisplay]="number"></app-display-cell>
+</div>
+<div class="calc-display">
+  <app-display-cell *ngFor="let number of mainDisplayValue" [numberToDisplay]="number"></app-display-cell>
+</div>
+
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-raised-button (click)="clear()">{{x ? 'C' : 'AC'}}</button>
+  <button class="calc-btn" mat-raised-button (click)="invertNumberSign()">±</button>
+  <button class="calc-btn" mat-raised-button (click)="divideBy100()">%</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('/')">/</button>
+</div>
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('7')">7</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('8')">8</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('9')">9</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('*')">x</button>
+</div>
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('4')">4</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('5')">5</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('6')">6</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onButtonClick('-')">-</button>
+</div>
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('1')">1</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('2')">2</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('3')">3</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('+')">+</button>
+</div>
+<div class="calc-btn-row">
+  <button class="calc-btn-lg" mat-raised-button (click)="onButtonClick('0')">0</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('.')">,</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="produceResult()">{{ipnOn ? 'Enter' : '='}}</button>
+</div>

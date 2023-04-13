@@ -18,7 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
 import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component';
-import { DisplayCellComponent } from './components/display-cell/display-cell.component'
+import { DisplayCellComponent } from './components/display-cell/display-cell.component';
+import { CalculatorComponent } from './pages/calculator/calculator.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { DisplayCellComponent } from './components/display-cell/display-cell.com
     NavbarComponent,
     ScriptConverterComponent,
     RomanNumeralsConverterComponent,
-    DisplayCellComponent
+    DisplayCellComponent,
+    CalculatorComponent
   ],
   imports: [
     AppRoutingModule,

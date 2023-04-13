@@ -1,0 +1,18 @@
+.calc-display {
+  display: flex;
+}
+
+.calc-btn-row {
+  display: flex;
+  justify-content: center;
+}
+
+.calc-btn {
+  margin: .5rem;
+  width: 3rem;
+}
+
+.calc-btn-lg {
+  @extend .calc-btn;
+  width: 9rem;
+}
