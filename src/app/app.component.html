@@ -1,7 +1,22 @@
-<header>
-  <app-navbar></app-navbar>
-</header>
+<mat-drawer-container class="example-container" [hasBackdrop]="true">
+  <mat-drawer [opened]="showSideNav" (closedStart)="toggleSideNav()" [mode]="'over'">
+    <a routerLink="mengenlehreuhr" (click)="toggleSideNav()">
+      Mengenlehreuhr
+    </a>
+    
+    <a routerLink="script-converter" (click)="toggleSideNav()">
+      Script Converter
+    </a>
+    
+    <a routerLink="roman-numerals-converter" (click)="toggleSideNav()">
+      Roman Numerals Converter
+    </a>
+  </mat-drawer>
 
-<router-outlet></router-outlet>
+  <mat-drawer-content>
+    <app-navbar (toggleSideNavEvent)="toggleSideNav()"></app-navbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
 
 <footer></footer>

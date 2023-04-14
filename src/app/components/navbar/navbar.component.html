@@ -2,22 +2,13 @@
   <a routerLink="">Main</a>
   <a routerLink="mengenlehreuhr">Mengenlehreuhr</a>
 </p> -->
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="sidenav">
+  <button class="sidenav-button" mat-mini-fab aria-label="Button to open sidebar menu." (click)="toggleSideNav()">
+    <mat-icon >more_vert</mat-icon>
+  </button>
   <span id="logo">Portfolio 2023</span>
 
-  <button mat-button mat-raised-button routerLink="">
+  <button class="main-button" mat-button mat-flat-button routerLink="">
     <span>Main</span>
-  </button>
-  
-  <button mat-button mat-raised-button routerLink="mengenlehreuhr">
-    <span>Mengenlehreuhr</span>
-  </button>
-  
-  <button mat-button mat-raised-button routerLink="script-converter">
-    <span>Script Converter</span>
-  </button>
-  
-  <button mat-button mat-raised-button routerLink="roman-numerals-converter">
-    <span>Roman Numerals Converter</span>
   </button>
 </mat-toolbar>

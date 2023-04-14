@@ -2,9 +2,17 @@
   padding-right: 1rem;
 }
 
-button {
-  margin-right: 1rem;
+.main-button {
+  margin-left: 1rem;
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+
+.sidenav {
+  width: 100vw;
+}
+
+.sidenav-button {
+  margin-right: 1rem;
 }
