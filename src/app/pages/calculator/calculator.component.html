@@ -13,7 +13,7 @@
   <button class="calc-btn" mat-stroked-button (click)="onMemory('M+')">M+</button>
   <button class="calc-btn" mat-stroked-button (click)="onMemory('M-')">M-</button>
   <button class="calc-btn" mat-stroked-button (click)="onMemory('MR')">MR</button>
-  <button class="calc-btn" mat-stroked-button (click)="clear()">{{x ? 'C' : 'AC'}}</button>
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="clear()">{{x ? 'C' : 'AC'}}</button>
   <button class="calc-btn" mat-stroked-button (click)="invertNumberSign()">±</button>
   <button class="calc-btn" mat-stroked-button (click)="divideBy100()">%</button>
   <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('/')">/</button>
@@ -127,5 +127,5 @@
   <button class="calc-btn" mat-stroked-button (click)="produceResult('rand')">Rand</button>
   <button class="calc-btn-lg" mat-raised-button (click)="onButtonClick('0')">0</button>
   <button class="calc-btn" mat-raised-button (click)="onButtonClick('.')">,</button>
-  <button class="calc-btn" mat-raised-button color="accent" (click)="produceResult()">{{ipnOn ? 'Enter' : '='}}</button>
+  <button class="calc-btn" mat-raised-button color="primary" (click)="produceResult()">{{ipnOn ? 'Enter' : '='}}</button>
 </div>
