@@ -21,6 +21,7 @@ import { ScriptConverterComponent } from './pages/script-converter/script-conver
 import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
 import { DisplayCellComponent } from './components/display-cell/display-cell.component'
 import { CalculatorComponent } from './pages/calculator/calculator.component'
+import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 
 @NgModule({
 	declarations: [
@@ -31,6 +32,8 @@ import { CalculatorComponent } from './pages/calculator/calculator.component'
 		ScriptConverterComponent,
 		RomanNumeralsConverterComponent,
 		DisplayCellComponent,
+		CalculatorComponent,
+		PomodoroTimerComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -44,6 +47,7 @@ import { CalculatorComponent } from './pages/calculator/calculator.component'
 		MatToolbarModule,
 		MatTooltipModule,
 		ReactiveFormsModule,
+		MatSidenavModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

@@ -24,10 +24,20 @@
       mat-button
       mat-stroked-button
       color="primary"
-      [color]="currentUrl === '/script-converter' ? 'accent' : 'primary'"
+      [color]="currentUrl === '/roman-numerals-converter' ? 'accent' : 'primary'"
       routerLink="roman-numerals-converter"
     >
       <span>Roman Numerals Converter</span>
+    </button>
+    
+    <button
+      mat-button
+      mat-stroked-button
+      color="primary"
+      [color]="currentUrl === '/pomodoro-timer' ? 'accent' : 'primary'"
+      routerLink="pomodoro-timer"
+    >
+      <span>Pomodoro Timer</span>
     </button>
   </mat-drawer>
 

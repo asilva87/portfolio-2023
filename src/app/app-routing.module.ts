@@ -5,12 +5,14 @@ import { CalculatorComponent } from './pages/calculator/calculator.component'
 import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component'
 import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
+import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 
 const routes: Routes = [
 	{ path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
 	{ path: 'roman-numerals-converter', component: RomanNumeralsConverterComponent },
 	{ path: 'script-converter', component: ScriptConverterComponent },
 	{ path: 'calculator', component: CalculatorComponent },
+	{ path: 'pomodoro-timer', component: PomodoroTimerComponent },
 ]
 
 @NgModule({

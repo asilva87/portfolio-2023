@@ -1,0 +1,23 @@
+<div class="timer">
+  <div class="timer__display">
+    <h1>{{currentPeriod}}</h1>
+    <div>
+      <div class="display-container">
+        <div class="timer-progress-display">
+          <div
+            [style.background-color]="period.active ? period.type : 'lightgray'"
+            class="timer-progress-display__indicator" 
+            *ngFor="let period of periods"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1>
+      {{minutes}}:{{seconds}}
+    </h1>
+  </div>
+  <button class="timer__button" (click)="startTimer()">{{!timerPaused ? 'Start' : 'Resume'}}</button>
+  <button class="timer__button" (click)="pauseTimer()" [disabled]="timerPaused">Pause</button>
+  <button class="timer__button" (click)="stopTimer()">Stop</button>
+</div>
