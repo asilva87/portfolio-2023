@@ -1,16 +1,34 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
   <mat-drawer [opened]="showSideNav" (closedStart)="toggleSideNav()" [mode]="'over'">
-    <a routerLink="mengenlehreuhr" (click)="toggleSideNav()">
-      Mengenlehreuhr
-    </a>
+    <button
+      mat-button
+      mat-stroked-button
+      [color]="currentUrl === '/mengenlehreuhr' ? 'accent' : 'primary'"
+      routerLink="mengenlehreuhr"
+      (click)="toggleSideNav()"
+    >
+      <span>Mengenlehreuhr</span>
+    </button>
     
-    <a routerLink="script-converter" (click)="toggleSideNav()">
-      Script Converter
-    </a>
+    <button
+      mat-button
+      mat-stroked-button
+      [color]="currentUrl === '/script-converter' ? 'accent' : 'primary'"
+      color="primary"
+      routerLink="script-converter"
+    >
+      <span>Script Converter</span>
+    </button>
     
-    <a routerLink="roman-numerals-converter" (click)="toggleSideNav()">
-      Roman Numerals Converter
-    </a>
+    <button
+      mat-button
+      mat-stroked-button
+      color="primary"
+      [color]="currentUrl === '/script-converter' ? 'accent' : 'primary'"
+      routerLink="roman-numerals-converter"
+    >
+      <span>Roman Numerals Converter</span>
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
