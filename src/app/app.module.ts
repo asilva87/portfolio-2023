@@ -1,25 +1,26 @@
-import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core'
+import { AppRoutingModule } from './app-routing.module'
+import { BrowserModule } from '@angular/platform-browser'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
-import { AppComponent } from './app.component';
-import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.component';
-import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { AppComponent } from './app.component'
+import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.component'
+import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component'
+import { NavbarComponent } from './components/navbar/navbar.component'
 
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button'
+import { MatIconModule } from '@angular/material/icon'
+import { MatInputModule } from '@angular/material/input'
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'
+import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatTooltipModule } from '@angular/material/tooltip'
 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScriptConverterComponent } from './pages/script-converter/script-converter.component';
-import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component';
-import { DisplayCellComponent } from './components/display-cell/display-cell.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
+import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
+import { DisplayCellComponent } from './components/display-cell/display-cell.component'
+import { CalculatorComponent } from './pages/calculator/calculator.component'
 
 @NgModule({
 	declarations: [
@@ -39,7 +40,6 @@ import { DisplayCellComponent } from './components/display-cell/display-cell.com
 		MatButtonModule,
 		MatIconModule,
 		MatInputModule,
-		MatSidenavModule,
 		MatSlideToggleModule,
 		MatToolbarModule,
 		MatTooltipModule,

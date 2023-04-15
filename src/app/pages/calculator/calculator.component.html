@@ -1,0 +1,131 @@
+<div  class="calc-display">
+  <app-display-cell *ngFor="let number of secondaryDisplayValue" [numberToDisplay]="number"></app-display-cell>
+</div>
+<div class="calc-display">
+  <app-display-cell *ngFor="let number of mainDisplayValue" [numberToDisplay]="number"></app-display-cell>
+</div>
+
+<!-- 1st Row -->
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="onParenthesis('open')">(</button>
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="onParenthesis('close')">)</button>
+  <button class="calc-btn" mat-stroked-button (click)="onMemory('MC')">MC</button>
+  <button class="calc-btn" mat-stroked-button (click)="onMemory('M+')">M+</button>
+  <button class="calc-btn" mat-stroked-button (click)="onMemory('M-')">M-</button>
+  <button class="calc-btn" mat-stroked-button (click)="onMemory('MR')">MR</button>
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="clear()">{{x ? 'C' : 'AC'}}</button>
+  <button class="calc-btn" mat-stroked-button (click)="invertNumberSign()">±</button>
+  <button class="calc-btn" mat-stroked-button (click)="divideBy100()">%</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('/')">/</button>
+</div>
+
+<!-- 2nd row -->
+<div class="calc-btn-row">
+  <button
+    class="calc-btn"
+    mat-flat-button
+    color="accent"
+    [ngClass]="{'btn-pressed-locked': secondaryButtonsActive}"
+    (click)="toggle2ndButtons()"
+  >
+    2<sup>nd</sup>
+  </button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('xSquared')">x<sup>2</sup></button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('xCubed')">x<sup>3</sup></button>
+  <button class="calc-btn" mat-stroked-button (click)="onOperation('expoY')">x<sup>y</sup></button>
+  <button
+    class="calc-btn"
+    mat-stroked-button 
+    [ngClass]="{'stroked-accent': secondaryButtonsActive}" 
+    (click)="!secondaryButtonsActive ? produceResult('eXed') : onOperation('yXed')"
+  >
+    <span *ngIf="!secondaryButtonsActive">
+      e<sup>x</sup>
+    </span>
+    <span *ngIf="secondaryButtonsActive">
+      y<sup>x</sup>
+    </span>
+  </button>
+  <button
+    class="calc-btn"
+    mat-stroked-button
+    [ngClass]="{'stroked-accent': secondaryButtonsActive}"
+    (click)="!secondaryButtonsActive ? produceResult('10Xed') : produceResult('2Xed')"
+  >
+    <span *ngIf="!secondaryButtonsActive">
+      10<sup>x</sup>
+    </span>
+    <span *ngIf="secondaryButtonsActive">
+      2<sup>x</sup>
+    </span>
+  </button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('7')">7</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('8')">8</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('9')">9</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('*')">x</button>
+</div>
+
+<!-- 3rd Row -->
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="produceResult('cubicRoot')">&#8543;x</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('squareRoot')">&radic;x</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('cubicRoot')">&#8731;x</button>
+  <button class="calc-btn" mat-stroked-button (click)="onOperation('yRoot')"><sup>y</sup>&#x221A;x</button>
+  <button 
+    class="calc-btn"
+    mat-stroked-button
+    [ngClass]="{'stroked-accent': secondaryButtonsActive}"
+    (click)="!secondaryButtonsActive ? produceResult('ln') : onOperation('logY')"
+  >
+    <span *ngIf="!secondaryButtonsActive">
+      ln
+    </span>
+    <span *ngIf="secondaryButtonsActive">
+      log<sub>y</sub>
+    </span>
+  </button>
+  <button
+    class="calc-btn"
+    mat-stroked-button
+    [ngClass]="{'stroked-accent': secondaryButtonsActive}"
+    (click)="produceResult(!secondaryButtonsActive ? 'log10' : 'log2')"
+  >
+    <span *ngIf="!secondaryButtonsActive">
+      log<sub>10</sub>
+    </span>
+    <span *ngIf="secondaryButtonsActive">
+      log<sub>2</sub>
+    </span>
+  </button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('4')">4</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('5')">5</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('6')">6</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onButtonClick('-')">-</button>
+</div>
+
+<!-- 4th Row -->
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="onOperation('')">x!</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('sin')">sin</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('cos')">cos</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('tan')">tan</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('e')">e</button>
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="onOperation('EE')">EE</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('1')">1</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('2')">2</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('3')">3</button>
+  <button class="calc-btn" mat-raised-button color="accent" (click)="onOperation('+')">+</button>
+</div>
+
+<!-- 5th Row -->
+<div class="calc-btn-row">
+  <button class="calc-btn" mat-stroked-button color="warn" (click)="produceResult('rad')">Rad</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('sinh')">sinh</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('cosh')">cosh</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('tanh')">tanh</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('pi')">&pi;</button>
+  <button class="calc-btn" mat-stroked-button (click)="produceResult('rand')">Rand</button>
+  <button class="calc-btn-lg" mat-raised-button (click)="onButtonClick('0')">0</button>
+  <button class="calc-btn" mat-raised-button (click)="onButtonClick('.')">,</button>
+  <button class="calc-btn" mat-raised-button color="primary" (click)="produceResult()">{{ipnOn ? 'Enter' : '='}}</button>
+</div>
