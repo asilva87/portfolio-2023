@@ -1,1 +1,7 @@
-<p>sieve-of-eratosthenes works!</p>
+<input #limitNumber [(ngModel)]="chosenNumber" (keydown)="onKeyDown($event)" (input)="findPrimeNumbers(limitNumber.value)">
+<div>
+  <span *ngIf="chosenNumber > 0">{{primes.length}} prime number{{primes.length ? 's' : ''}} found.</span><br />
+  <span *ngFor="let number of primes, let i = index">
+    <i>{{number}}{{i !== primes.length - 1 ? ', ' : '.'}}</i>
+  </span>
+</div>
