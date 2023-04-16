@@ -39,6 +39,16 @@
     >
       <span>Pomodoro Timer</span>
     </button>
+    
+    <button
+      mat-button
+      mat-stroked-button
+      color="primary"
+      [color]="currentUrl === '/sieve-of-eratosthenes' ? 'accent' : 'primary'"
+      routerLink="sieve-of-eratosthenes"
+    >
+      <span>Sieve of Eratosthenes</span>
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>
