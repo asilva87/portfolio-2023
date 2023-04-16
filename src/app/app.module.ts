@@ -21,7 +21,8 @@ import { ScriptConverterComponent } from './pages/script-converter/script-conver
 import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
 import { DisplayCellComponent } from './components/display-cell/display-cell.component'
 import { CalculatorComponent } from './pages/calculator/calculator.component'
-import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
+import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component';
+import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
 
 @NgModule({
 	declarations: [
@@ -34,6 +35,7 @@ import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.co
 		DisplayCellComponent,
 		CalculatorComponent,
 		PomodoroTimerComponent,
+  SieveOfEratosthenesComponent,
 	],
 	imports: [
 		AppRoutingModule,
