@@ -49,6 +49,16 @@
     >
       <span>Sieve of Eratosthenes</span>
     </button>
+    
+    <button
+      mat-button
+      mat-stroked-button
+      color="primary"
+      [color]="currentUrl === '/currency-converter' ? 'accent' : 'primary'"
+      routerLink="currency-converter"
+    >
+      <span>Currency Converter</span>
+    </button>
   </mat-drawer>
 
   <mat-drawer-content>

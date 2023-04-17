@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { AppRoutingModule } from './app-routing.module'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component'
 import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.component'
@@ -15,14 +16,16 @@ import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatTooltipModule } from '@angular/material/tooltip'
+import { MatSelectModule } from '@angular/material/select'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
 import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converter/roman-numerals-converter.component'
 import { DisplayCellComponent } from './components/display-cell/display-cell.component'
 import { CalculatorComponent } from './pages/calculator/calculator.component'
-import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component';
+import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
+import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
 
 @NgModule({
 	declarations: [
@@ -35,7 +38,8 @@ import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/siev
 		DisplayCellComponent,
 		CalculatorComponent,
 		PomodoroTimerComponent,
-  SieveOfEratosthenesComponent,
+		SieveOfEratosthenesComponent,
+		CurrencyConverterComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -45,11 +49,13 @@ import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/siev
 		MatButtonModule,
 		MatIconModule,
 		MatInputModule,
+		MatSelectModule,
 		MatSlideToggleModule,
 		MatToolbarModule,
 		MatTooltipModule,
 		ReactiveFormsModule,
 		MatSidenavModule,
+		HttpClientModule,
 	],
 	providers: [],
 	bootstrap: [AppComponent],

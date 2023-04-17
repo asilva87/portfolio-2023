@@ -1,0 +1,24 @@
+<input type="text" #valueToConvert (input)="onInput(valueToConvert.value)" />
+
+<!-- Currency to be taken as base for conversion -->
+<mat-form-field appearance="fill">
+  <mat-label>From:</mat-label>
+  <mat-select [(value)]="fromCurrency">
+    <mat-option *ngFor="let currency of availableCurrencies" [value]="currency">{{currency}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<button mat-raised-button (click)="swapDirection()">
+  <mat-icon>360</mat-icon>
+</button>
+
+<!-- Currency to be taken as target for conversion -->
+<mat-form-field appearance="fill">
+  <mat-label>To:</mat-label>
+  <mat-select [(value)]="toCurrency">
+    <mat-option *ngFor="let currency of availableCurrencies" [value]="currency">{{currency}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<!-- Conversion result -->
+<h1>{{convertedAmount}}</h1>

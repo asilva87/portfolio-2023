@@ -7,6 +7,7 @@ import { RomanNumeralsConverterComponent } from './pages/roman-numerals-converte
 import { ScriptConverterComponent } from './pages/script-converter/script-converter.component'
 import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
+import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
 
 const routes: Routes = [
 	{ path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
 	{ path: 'calculator', component: CalculatorComponent },
 	{ path: 'pomodoro-timer', component: PomodoroTimerComponent },
 	{ path: 'sieve-of-eratosthenes', component: SieveOfEratosthenesComponent },
+	{ path: 'currency-converter', component: CurrencyConverterComponent },
 ]
 
 @NgModule({
