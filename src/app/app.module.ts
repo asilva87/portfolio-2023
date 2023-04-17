@@ -25,7 +25,8 @@ import { DisplayCellComponent } from './components/display-cell/display-cell.com
 import { CalculatorComponent } from './pages/calculator/calculator.component'
 import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
-import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
+import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component';
+import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher.component'
 
 @NgModule({
 	declarations: [
@@ -40,6 +41,7 @@ import { CurrencyConverterComponent } from './pages/currency-converter/currency-
 		PomodoroTimerComponent,
 		SieveOfEratosthenesComponent,
 		CurrencyConverterComponent,
+  VigenereCipherComponent,
 	],
 	imports: [
 		AppRoutingModule,

@@ -1,68 +1,20 @@
 <mat-drawer-container class="example-container" [hasBackdrop]="true">
-  <mat-drawer [opened]="showSideNav" (closedStart)="toggleSideNav()" [mode]="'over'">
+  <mat-drawer [opened]="showSideNav" (closedStart)="toggleSideNav(false)" [mode]="'over'">
     <button
+      *ngFor="let route of routesLocal"
       mat-button
       mat-stroked-button
-      [color]="currentUrl === '/mengenlehreuhr' ? 'accent' : 'primary'"
-      routerLink="mengenlehreuhr"
-      (click)="toggleSideNav()"
+      [color]="currentUrl === 'route.path' ? 'accent' : 'primary'"
+      [routerLink]="route.path"
+      (click)="toggleSideNav(false, route.path)"
     >
-      <span>Mengenlehreuhr</span>
+      <span>{{route.name}}</span>
     </button>
-    
-    <button
-      mat-button
-      mat-stroked-button
-      [color]="currentUrl === '/script-converter' ? 'accent' : 'primary'"
-      color="primary"
-      routerLink="script-converter"
-    >
-      <span>Script Converter</span>
-    </button>
-    
-    <button
-      mat-button
-      mat-stroked-button
-      color="primary"
-      [color]="currentUrl === '/roman-numerals-converter' ? 'accent' : 'primary'"
-      routerLink="roman-numerals-converter"
-    >
-      <span>Roman Numerals Converter</span>
-    </button>
-    
-    <button
-      mat-button
-      mat-stroked-button
-      color="primary"
-      [color]="currentUrl === '/pomodoro-timer' ? 'accent' : 'primary'"
-      routerLink="pomodoro-timer"
-    >
-      <span>Pomodoro Timer</span>
-    </button>
-    
-    <button
-      mat-button
-      mat-stroked-button
-      color="primary"
-      [color]="currentUrl === '/sieve-of-eratosthenes' ? 'accent' : 'primary'"
-      routerLink="sieve-of-eratosthenes"
-    >
-      <span>Sieve of Eratosthenes</span>
-    </button>
-    
-    <button
-      mat-button
-      mat-stroked-button
-      color="primary"
-      [color]="currentUrl === '/currency-converter' ? 'accent' : 'primary'"
-      routerLink="currency-converter"
-    >
-      <span>Currency Converter</span>
-    </button>
+  
   </mat-drawer>
 
   <mat-drawer-content>
-    <app-navbar (toggleSideNavEvent)="toggleSideNav()"></app-navbar>
+    <app-navbar (toggleSideNavEvent)="toggleSideNav(true)"></app-navbar>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>
