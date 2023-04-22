@@ -1,20 +1,28 @@
-.example-container {
-  height: calc(100vh);
+.sidenav-container {
+	height: calc(100vh);
 }
 
 mat-drawer-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 html {
-  height: 100vh;
+	height: 100vh;
 }
 
 button {
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+}
+
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 80vh;
 }

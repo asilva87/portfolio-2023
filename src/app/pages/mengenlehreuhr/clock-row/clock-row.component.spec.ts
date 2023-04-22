@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { ClockRowComponent } from './clock-row.component';
+import { ClockRowComponent } from './clock-row.component'
 
 describe('ClockRowComponent', () => {
-  let component: ClockRowComponent;
-  let fixture: ComponentFixture<ClockRowComponent>;
+	let component: ClockRowComponent
+	let fixture: ComponentFixture<ClockRowComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ClockRowComponent ]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [ClockRowComponent],
+		}).compileComponents()
 
-    fixture = TestBed.createComponent(ClockRowComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(ClockRowComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

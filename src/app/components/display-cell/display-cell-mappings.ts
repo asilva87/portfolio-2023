@@ -134,6 +134,15 @@ const displayMappings: Record<string, boolean[][]> = {
 		[true, false, false, false, false],
 		[false, false, false, false, false],
 	],
+	':': [
+		[false, false, false, false, false],
+		[false, false, true, false, false],
+		[false, false, true, false, false],
+		[false, false, false, false, false],
+		[false, false, true, false, false],
+		[false, false, true, false, false],
+		[false, false, false, false, false],
+	],
 	'.': [
 		[false, false, false, false, false],
 		[false, false, false, false, false],

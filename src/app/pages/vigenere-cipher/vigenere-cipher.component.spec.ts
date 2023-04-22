@@ -1,23 +1,22 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { VigenereCipherComponent } from './vigenere-cipher.component';
+import { VigenereCipherComponent } from './vigenere-cipher.component'
 
 describe('VigenereCipherComponent', () => {
-  let component: VigenereCipherComponent;
-  let fixture: ComponentFixture<VigenereCipherComponent>;
+	let component: VigenereCipherComponent
+	let fixture: ComponentFixture<VigenereCipherComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ VigenereCipherComponent ]
-    })
-    .compileComponents();
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			declarations: [VigenereCipherComponent],
+		}).compileComponents()
 
-    fixture = TestBed.createComponent(VigenereCipherComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		fixture = TestBed.createComponent(VigenereCipherComponent)
+		component = fixture.componentInstance
+		fixture.detectChanges()
+	})
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+	it('should create', () => {
+		expect(component).toBeTruthy()
+	})
+})

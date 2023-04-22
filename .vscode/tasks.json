@@ -1,44 +1,44 @@
 {
-  // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "type": "npm",
-      "script": "start",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
-    },
-    {
-      "type": "npm",
-      "script": "test",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "typescript",
-        "pattern": "$tsc",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": {
-            "regexp": "(.*?)"
-          },
-          "endsPattern": {
-            "regexp": "bundle generation complete"
-          }
-        }
-      }
-    }
-  ]
+	// For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "start",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "typescript",
+				"pattern": "$tsc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": {
+						"regexp": "(.*?)"
+					},
+					"endsPattern": {
+						"regexp": "bundle generation complete"
+					}
+				}
+			}
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "typescript",
+				"pattern": "$tsc",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": {
+						"regexp": "(.*?)"
+					},
+					"endsPattern": {
+						"regexp": "bundle generation complete"
+					}
+				}
+			}
+		}
+	]
 }
 
 // This is a configuration for a task in VSCode's "tasks.json" file that runs an NPM script using the "npm run start"
@@ -46,7 +46,7 @@
 
 //     "type": "npm": Specifies the type of task runner to use, which in this case is "npm".
 //     "script": "start": Specifies the name of the script to run, which in this case is "start".
-//     "isBackground": true: Tells VSCode to run this task in the background, which means that it doesn't block the 
+//     "isBackground": true: Tells VSCode to run this task in the background, which means that it doesn't block the
 //      terminal window and can continue running while you work on other tasks.
 //     "problemMatcher": Specifies a problem matcher to use for this task. A problem matcher is a way to capture and
 //      parse error messages or other output from the task and present them in a way that is useful to the user.

@@ -1,4 +1,26 @@
-import { Component, OnInit } from '@angular/core'
+import { Component } from '@angular/core'
+import {
+	FormControl,
+	FormGroup,
+	FormGroupDirective,
+	NgForm,
+	Validators,
+} from '@angular/forms'
+import { ErrorStateMatcher } from '@angular/material/core'
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+	isErrorState(
+		control: FormControl | null,
+		form: FormGroupDirective | NgForm | null
+	): boolean {
+		const isSubmitted = form && form.submitted
+		return !!(
+			control &&
+			control.invalid &&
+			(control.dirty || control.touched || isSubmitted)
+		)
+	}
+}
 
 @Component({
 	selector: 'app-sieve-of-eratosthenes',
@@ -6,26 +28,42 @@ import { Component, OnInit } from '@angular/core'
 	styleUrls: ['./sieve-of-eratosthenes.component.scss'],
 })
 export class SieveOfEratosthenesComponent {
-	public chosenNumber: number
+	public numberInputForm: FormGroup
 	public primes: number[] = []
+	public matcher = new MyErrorStateMatcher()
 
 	constructor() {
-		this.chosenNumber = 0
+		this.numberInputForm = new FormGroup({
+			numberInput: new FormControl(
+				'0',
+				Validators.compose([
+					Validators.maxLength(4),
+					Validators.pattern('^[0-9]*$'),
+				])
+			),
+		})
 	}
 
 	public onKeyDown(event: KeyboardEvent) {
 		const input = event.target as HTMLInputElement
 		const value = input.value
 
+		console.log(event)
 		if (event.key === '0' && value === '0') {
 			event.preventDefault()
 		}
 	}
 
-	public findPrimeNumbers(chosenNumberStr: string) {
-		let chosenNumber = Number(chosenNumberStr)
+	public findPrimeNumbers(event: Event) {
+		const input = event.target as HTMLInputElement
+		let value = input.value
 
-		if (!chosenNumber) {
+		if (value.startsWith('0')) {
+			input.value = value.slice(1)
+			value = value.slice(1)
+		}
+
+		if (!value) {
 			return
 		}
 
@@ -34,7 +72,7 @@ export class SieveOfEratosthenesComponent {
 		// at least one number before it and, thus, is not prime.
 		// In the end, unmarked numbers (not divisable by numbers before it),
 		// are all the possible prime numbers from 2 to "numberInput".
-		const possiblePrimes: Array<boolean | number> = [...Array(chosenNumber).keys()]
+		const possiblePrimes: Array<boolean | number> = [...Array(+value).keys()]
 
 		// Flag numbers that aren't prime, that is, numbers that can't
 		// be divided by any other numbers except for 1.
@@ -44,8 +82,8 @@ export class SieveOfEratosthenesComponent {
 		// are irrelevant, since every number would be marked and no
 		// primes would be found.
 		let currentBaseNumber = 2
-		while (currentBaseNumber + 1 < chosenNumber) {
-			for (let i = currentBaseNumber + 1; i <= chosenNumber; i++) {
+		while (currentBaseNumber + 1 < +value) {
+			for (let i = currentBaseNumber + 1; i <= +value; i++) {
 				if (i % currentBaseNumber === 0) {
 					possiblePrimes[i] = true
 				}
@@ -57,5 +95,10 @@ export class SieveOfEratosthenesComponent {
 		this.primes = possiblePrimes
 			.filter((value: number | boolean) => typeof value === 'number')
 			.slice(2) as number[]
+	}
+
+	public clearInput() {
+		this.numberInputForm.get('numberInput')?.setValue('0')
+		this.primes = []
 	}
 }

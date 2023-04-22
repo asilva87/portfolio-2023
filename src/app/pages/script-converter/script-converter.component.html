@@ -1,6 +1,7 @@
-<input type="text" #textInput (input)="convertText(textInput.value)">
+<input type="text" #textInput (input)="convertText(textInput.value)" />
 <div>
-  <span *ngFor="let wordObj of convertedWords, let i = index" [style]="{'backgroundColor': wordObj.isWrong ? 'red' : ''}">
-    {{wordObj.word}} 
-  </span>
+	<span *ngFor="let wordObj of convertedWords; let i = index"
+		[style]="{ backgroundColor: wordObj.isWrong ? 'red' : '' }">
+		{{ wordObj.word }}
+	</span>
 </div>

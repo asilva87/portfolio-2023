@@ -12,7 +12,10 @@ import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher
 
 export const routes: Routes = [
 	{ path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
-	{ path: 'roman-numerals-converter', component: RomanNumeralsConverterComponent },
+	{
+		path: 'roman-numerals-converter',
+		component: RomanNumeralsConverterComponent,
+	},
 	{ path: 'script-converter', component: ScriptConverterComponent },
 	{ path: 'calculator', component: CalculatorComponent },
 	{ path: 'pomodoro-timer', component: PomodoroTimerComponent },

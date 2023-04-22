@@ -23,7 +23,10 @@ export class AppComponent implements OnInit {
 	public currentUrl = ''
 	public routesLocal: Record<string, string>[] = []
 
-	constructor(private router: Router, formatStringService: FormatStringService) {
+	constructor(
+		private router: Router,
+		formatStringService: FormatStringService
+	) {
 		const routesLocal = routes.map((route: any) => {
 			const name$ = formatStringService.removeHyphens(route.path)
 
@@ -40,7 +43,6 @@ export class AppComponent implements OnInit {
 
 		forkJoin(routesLocal).subscribe(routes => {
 			this.routesLocal = routes
-			console.log(routes)
 		})
 	}
 
@@ -54,7 +56,6 @@ export class AppComponent implements OnInit {
 
 	public toggleSideNav(status: boolean, route?: string) {
 		this.showSideNav = status
-		console.log(route)
 	}
 }
 

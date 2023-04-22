@@ -24,7 +24,10 @@ export class ScriptConverterComponent {
 		// Done before trimming as to not miss it.
 		const lastCharWasSpace = inputText[inputText.length - 1] === ' '
 		// String input turned into an array, after remove stress numbers and trimming.
-		let inputTextArr: string[] = inputText.trim().replace(/\s+/g, ' ').split(' ')
+		let inputTextArr: string[] = inputText
+			.trim()
+			.replace(/\s+/g, ' ')
+			.split(' ')
 
 		if (inputTextArr) {
 			for (let i = 0; i < inputTextArr.length; i++) {
@@ -42,7 +45,9 @@ export class ScriptConverterComponent {
 				// been found are specially marked in the template.
 				if (lastCharWasSpace && dictionary[inputTextArr[i]]) {
 					this.convertedWords[i] = {
-						word: this.getCyrillicConversion(dictionary[inputTextArr[i]].replace(/[0-9]/g, '')),
+						word: this.getCyrillicConversion(
+							dictionary[inputTextArr[i]].replace(/[0-9]/g, '')
+						),
 						isWrong: false,
 					}
 				}

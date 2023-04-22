@@ -19,20 +19,22 @@ interface Period {
 })
 export class PomodoroTimerComponent {
 	public periods: Period[] = [
-		{ length: 1, type: PeriodType.ACTIVITY, active: false },
+		{ length: 25, type: PeriodType.ACTIVITY, active: false },
 		{ length: 5, type: PeriodType.REST, active: false },
-		{ length: 10, type: PeriodType.ACTIVITY, active: false },
+		{ length: 25, type: PeriodType.ACTIVITY, active: false },
 		{ length: 5, type: PeriodType.REST, active: false },
-		{ length: 10, type: PeriodType.ACTIVITY, active: false },
+		{ length: 25, type: PeriodType.ACTIVITY, active: false },
 		{ length: 5, type: PeriodType.REST, active: false },
-		{ length: 10, type: PeriodType.ACTIVITY, active: false },
-		{ length: 15, type: PeriodType.LONGREST, active: false },
+		{ length: 25, type: PeriodType.ACTIVITY, active: false },
+		{ length: 30, type: PeriodType.LONGREST, active: false },
 	]
 	public isRest = false
 	public currentPeriod = 0
 	private timeInterval: any
 	public minutes = '00'
 	public seconds = '00'
+	public minutesDisplay = ['0', '0']
+	public secondsDisplay = ['0', '0']
 	public timerRunning = false
 	public timerPaused = false
 
@@ -89,6 +91,8 @@ export class PomodoroTimerComponent {
 
 			this.seconds = seconds < 10 ? `0${seconds}` : seconds.toString()
 			this.minutes = minutes < 10 ? `0${minutes}` : minutes.toString()
+			this.secondsDisplay = this.seconds.toString().split('')
+			this.minutesDisplay = this.minutes.toString().split('')
 		}, 100)
 	}
 
@@ -103,6 +107,7 @@ export class PomodoroTimerComponent {
 	private resetTimer(): void {
 		this.resetProgressIndicator()
 		this.seconds = this.minutes = '00'
+		this.secondsDisplay = this.minutesDisplay = ['0', '0']
 	}
 
 	private resetProgressIndicator() {

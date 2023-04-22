@@ -9,7 +9,8 @@ export class FormatStringService {
 
 	public removeHyphens(text: string): Observable<any> {
 		const stringArr = text.split('-')
-		const firstWord = stringArr[0].charAt(0).toUpperCase() + stringArr[0].slice(1)
+		const firstWord =
+			stringArr[0].charAt(0).toUpperCase() + stringArr[0].slice(1)
 		const formattedWord = [firstWord, ...stringArr.slice(1)].join(' ')
 
 		return of(formattedWord)

@@ -9,7 +9,10 @@ import { ClockRowComponent } from './pages/mengenlehreuhr/clock-row/clock-row.co
 import { MengenlehreuhrComponent } from './pages/mengenlehreuhr/mengenlehreuhr.component'
 import { NavbarComponent } from './components/navbar/navbar.component'
 
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 import { MatButtonModule } from '@angular/material/button'
+import { MatCardModule } from '@angular/material/card'
+import { MatDividerModule } from '@angular/material/divider'
 import { MatIconModule } from '@angular/material/icon'
 import { MatInputModule } from '@angular/material/input'
 import { MatSidenavModule } from '@angular/material/sidenav'
@@ -25,7 +28,7 @@ import { DisplayCellComponent } from './components/display-cell/display-cell.com
 import { CalculatorComponent } from './pages/calculator/calculator.component'
 import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
-import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component';
+import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
 import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher.component'
 
 @NgModule({
@@ -41,7 +44,7 @@ import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher
 		PomodoroTimerComponent,
 		SieveOfEratosthenesComponent,
 		CurrencyConverterComponent,
-  VigenereCipherComponent,
+		VigenereCipherComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -49,12 +52,15 @@ import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher
 		BrowserModule,
 		FormsModule,
 		MatButtonModule,
+		MatButtonToggleModule,
+		MatCardModule,
 		MatIconModule,
 		MatInputModule,
 		MatSelectModule,
 		MatSlideToggleModule,
 		MatToolbarModule,
 		MatTooltipModule,
+		MatDividerModule,
 		ReactiveFormsModule,
 		MatSidenavModule,
 		HttpClientModule,
@@ -62,7 +68,7 @@ import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher
 	providers: [],
 	bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
 // This file is responsible for bootstrapping the application and importing all the necessary modules,
 // components, services, and other dependencies. It also defines the "root component" of the application,
