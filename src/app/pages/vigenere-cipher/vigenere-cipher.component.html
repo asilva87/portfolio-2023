@@ -1,1 +1,36 @@
-<p>vigenere-cipher works!</p>
+<!-- Input and output -->
+<mat-card>
+  <mat-card-content>
+    <mat-form-field class="vigenere-number-form" [formGroup]="textInputForm">
+      <mat-label>Original text input:</mat-label>
+
+      <input matInput maxlength="4" type="text" formControlName="textInput" (input)="encipher($event)"
+        aria-label="Input text for number up to which prime numbers should be found." [errorStateMatcher]="matcher"
+        color="accent" />
+
+      <button *ngIf="textInputForm.get('textInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
+        (click)="clearInput()">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <mat-error *ngIf="textInputForm.get('textInput')?.invalid">
+        Please enter a valid text (no numbers or symbols)
+      </mat-error>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
+
+<!-- Alphabet matrix marked letters display -->
+<mat-card>
+  <mat-card-content>
+    <div *ngFor="let alphabet of alphabetMatrix; let alphabetIndex = index" class="alphabet-matrix__row"
+      [class.alphabet-matrix__row--cell--bordered]="alphabetIndex === 0">
+      <div *ngFor="let letterObj of alphabet; let letterIndex = index">
+        <div class="alphabet-matrix__row--cell" [class.marked]="letterObj.marked"
+          [class.alphabet-matrix__row--cell--bordered]="letterIndex === 0">
+          {{letterObj.letter}}
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
