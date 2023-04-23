@@ -24,13 +24,17 @@ jobs:
 
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
 
 
 
     steps:
 
       - uses: actions/checkout@v2
+
+        with:
+
+            node-version: '16.x'
 
 
 
@@ -40,7 +44,7 @@ jobs:
 
         with:
 
-          node-version: '18.x'
+          node-version: '16.x'
 
 
 
@@ -70,7 +74,7 @@ jobs:
 
   deploy:
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
 
     needs: build
 
