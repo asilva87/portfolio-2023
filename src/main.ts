@@ -1,10 +1,10 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic'
 
-import { AppModule } from './app/app.module';
+import { AppModule } from './app/app.module'
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+platformBrowserDynamic()
+	.bootstrapModule(AppModule)
+	.catch(err => console.error(err))
 
 // The "main.ts" file is the entry point of an Angular application. It is responsible for bootstrapping
 // the application module, which is defined in the "AppModule" file.

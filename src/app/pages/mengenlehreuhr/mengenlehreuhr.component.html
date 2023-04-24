@@ -1,16 +1,19 @@
 <div>
-  <!-- Seconds row -->
-  <app-clock-row [repetitions]="1" [activeCells]="secondsActive" [largeCell]="true"></app-clock-row>
+	<!-- Seconds row -->
+	<div class="display-container">
+		<app-clock-row [repetitions]="1" [activeCells]="secondsActive" [largeCell]="true"
+			[secondsCell]="true"></app-clock-row>
+	</div>
 
-  <!-- Five hours row -->
-  <app-clock-row [repetitions]="4" [activeCells]="fiveHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
+	<!-- Five hours row -->
+	<app-clock-row [repetitions]="4" [activeCells]="fiveHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
 
-  <!-- Unit hours row -->
-  <app-clock-row [repetitions]="4" [activeCells]="unitHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
+	<!-- Unit hours row -->
+	<app-clock-row [repetitions]="4" [activeCells]="unitHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
 
-  <!-- Five minutes row -->
-  <app-clock-row [repetitions]="11" [activeCells]="fiveMinutesActive" [isFiveMinutes]="true"></app-clock-row>
+	<!-- Five minutes row -->
+	<app-clock-row [repetitions]="11" [activeCells]="fiveMinutesActive" [isFiveMinutes]="true"></app-clock-row>
 
-  <!-- Unit minutes row -->
-  <app-clock-row [repetitions]="4" [activeCells]="unitMinutesActive" [largeCell]="true"></app-clock-row>
+	<!-- Unit minutes row -->
+	<app-clock-row [repetitions]="4" [activeCells]="unitMinutesActive" [largeCell]="true"></app-clock-row>
 </div>

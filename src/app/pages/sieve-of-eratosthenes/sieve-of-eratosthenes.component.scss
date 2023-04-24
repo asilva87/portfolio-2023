@@ -1,0 +1,19 @@
+.prime-numbers-container {
+	max-width: 50vw;
+	transition: width 0.5s ease-in-out;
+}
+
+.prime-numbers-input {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.prime-numbers-container__counter {
+	font-weight: 700;
+}
+
+mat-card-title {
+	line-height: 14px !important;
+	margin-bottom: 1rem;
+}

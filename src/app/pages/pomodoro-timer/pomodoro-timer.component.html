@@ -1,23 +1,38 @@
-<div class="timer">
-  <div class="timer__display">
-    <h1>{{currentPeriod}}</h1>
-    <div>
-      <div class="display-container">
-        <div class="timer-progress-display">
-          <div
-            [style.background-color]="period.active ? period.type : 'lightgray'"
-            class="timer-progress-display__indicator" 
-            *ngFor="let period of periods"
-          >
-          </div>
-        </div>
-      </div>
-    </div>
-    <h1>
-      {{minutes}}:{{seconds}}
-    </h1>
-  </div>
-  <button class="timer__button" (click)="startTimer()">{{!timerPaused ? 'Start' : 'Resume'}}</button>
-  <button class="timer__button" (click)="pauseTimer()" [disabled]="timerPaused">Pause</button>
-  <button class="timer__button" (click)="stopTimer()">Stop</button>
-</div>
+<mat-card>
+	<mat-card-content>
+		<!-- Timer progress display -->
+		<div class="timer">
+			<div>
+				<div class="display-container">
+					<div class="timer__progress-display">
+						<div [style.background-color]="period.active ? period.type : 'lightgray'"
+							class="timer__progress-display__indicator" *ngFor="let period of periods">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Timer -->
+			<div class="timer__display">
+				<app-display-cell *ngFor="let minutes of minutesDisplay" [numberToDisplay]="minutes"></app-display-cell>
+
+				<app-display-cell numberToDisplay=":"></app-display-cell>
+
+				<app-display-cell *ngFor="let number of secondsDisplay" [numberToDisplay]="number"></app-display-cell>
+			</div>
+		</div>
+
+		<!-- Control -->
+		<div class="timer__button__container">
+			<button class="timer__button" color="primary" mat-mini-fab (click)="startTimer()" [disabled]="timerRunning">
+				<mat-icon>play_arrow</mat-icon>
+			</button>
+			<button class="timer__button" mat-mini-fab (click)="pauseTimer()" [disabled]="timerPaused">
+				<mat-icon>pause</mat-icon>
+			</button>
+			<button class="timer__button" color="warn" mat-mini-fab (click)="stopTimer()">
+				<mat-icon>stop</mat-icon>
+			</button>
+		</div>
+	</mat-card-content>
+</mat-card>

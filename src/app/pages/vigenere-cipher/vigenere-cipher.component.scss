@@ -1,0 +1,27 @@
+.alphabet-matrix__row {
+  display: flex;
+  justify-content: center;
+
+  &--cell {
+    height: 2vh;
+    width: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--marked {
+      background-color: greenyellow;
+    }
+  }
+}
+
+.enciphered-text {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.vigenere-number-form {
+  display: flex;
+  justify-content: space-around;
+}

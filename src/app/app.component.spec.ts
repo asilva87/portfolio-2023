@@ -1,49 +1,47 @@
-import { TestBed, ComponentFixture } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { TestBed, ComponentFixture } from '@angular/core/testing'
+import { RouterTestingModule } from '@angular/router/testing'
+import { AppComponent } from './app.component'
 
 describe('AppComponent', () => {
-  let component: AppComponent
-  let fixture: ComponentFixture<AppComponent>
+	let component: AppComponent
+	let fixture: ComponentFixture<AppComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
-    }).compileComponents();
-  });
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [RouterTestingModule],
+			declarations: [AppComponent],
+		}).compileComponents()
+	})
 
-  it('should create the app', () => {
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    expect(component).toBeTruthy();
-  });
-  // In the given test case, "fixture.detectChanges()" is not called because it is not required to test the
-  // creation of the component instance.
-  // Here, "TestBed.createComponent()" method is used to create an instance of the "AppComponent" and then
-  // "fixture.componentInstance" is used to get the instance of the component. Finally, "expect(component).toBeTruthy()"
-  // is used to assert that the component instance is truthy or not, which means the component is successfully
-  // created or not.
-  // Calling "fixture.detectChanges()" in this test case is not needed because there are no bindings or changes
-  // that would require detection by Angular's change detection system.
+	it('should create the app', () => {
+		fixture = TestBed.createComponent(AppComponent)
+		component = fixture.componentInstance
+		expect(component).toBeTruthy()
+	})
+	// In the given test case, "fixture.detectChanges()" is not called because it is not required to test the
+	// creation of the component instance.
+	// Here, "TestBed.createComponent()" method is used to create an instance of the "AppComponent" and then
+	// "fixture.componentInstance" is used to get the instance of the component. Finally, "expect(component).toBeTruthy()"
+	// is used to assert that the component instance is truthy or not, which means the component is successfully
+	// created or not.
+	// Calling "fixture.detectChanges()" in this test case is not needed because there are no bindings or changes
+	// that would require detection by Angular's change detection system.
 
-  it(`should have as title 'portfolio-2023'`, () => {
-    fixture = TestBed.createComponent(AppComponent);
-    component = fixture.componentInstance;
-    expect(component.title).toEqual('portfolio-2023');
-  });
+	it(`should have as title 'portfolio-2023'`, () => {
+		fixture = TestBed.createComponent(AppComponent)
+		component = fixture.componentInstance
+		expect(component.title).toEqual('portfolio-2023')
+	})
 
-  it('should render title', () => {
-    fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('portfolio-2023 app is running!');
-  });
-});
+	it('should render title', () => {
+		fixture = TestBed.createComponent(AppComponent)
+		fixture.detectChanges()
+		const compiled = fixture.nativeElement as HTMLElement
+		expect(compiled.querySelector('.content span')?.textContent).toContain(
+			'portfolio-2023 app is running!'
+		)
+	})
+})
 
 // "TestBed" is a utility provided by Angular for testing Angular applications. It provides a test environment
 // and infrastructure to create and run tests on Angular components, services, and other features.
@@ -51,7 +49,7 @@ describe('AppComponent', () => {
 // behavior. It provides a way to create a test module that contains all the necessary dependencies required to
 // test your component, such as services, pipes, and directives.
 // Here, the "beforeEach" function is typically imported from the @angular/core/testing module. This function is
-// used to set up the test environment before each test is run. Here it declares de "AppComponent". 
+// used to set up the test environment before each test is run. Here it declares de "AppComponent".
 // The "compileComponents" function is also called to compile the component's template before the tests run.
 
 // In Angular testing, a "fixture" is an object that allows you to interact with a component under test. It provides
@@ -68,7 +66,6 @@ describe('AppComponent', () => {
 // or other aspects of the component that depend on change detection are properly initialized.
 // So, while it may appear that nothing has changed in the component, calling "fixture.detectChanges()" ensures that
 // the component is fully initialized and ready for testing.
-
 
 // About Angular's Change Detection System ============================================================================
 // Angular's change detection system is a mechanism that determines when the view of an Angular application should be

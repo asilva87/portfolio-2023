@@ -1,4 +1,5 @@
 # ng generate guard --------------------
+
 The command `ng generate guard` is used to generate a new guard service in an Angular application. A guard is a service that determines whether or not a user is authorized to access a particular route in the application.
 
 The `ng generate guard` command creates a new file with the specified name under the "app" directory, and adds the necessary code to make the guard service work. The generated guard class implements the `CanActivate` interface, which allows it to be used to protect routes in the application.
@@ -6,22 +7,33 @@ The `ng generate guard` command creates a new file with the specified name under
 By default, the `ng generate guard` command creates a guard service with a `canActivate()` method that always returns `true`. However, you can customize the implementation of this method to perform any kind of authorization check that your application requires.
 
 # Example
+
 `ng generate guard auth`
 
 ```javascript
-import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core'
+import {
+	CanActivate,
+	ActivatedRouteSnapshot,
+	RouterStateSnapshot,
+	UrlTree,
+} from '@angular/router'
+import { Observable } from 'rxjs'
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
-  canActivate(
-    next: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return true;
-  }
+	canActivate(
+		next: ActivatedRouteSnapshot,
+		state: RouterStateSnapshot
+	):
+		| Observable<boolean | UrlTree>
+		| Promise<boolean | UrlTree>
+		| boolean
+		| UrlTree {
+		return true
+	}
 }
 ```
 

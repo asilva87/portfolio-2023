@@ -8,15 +8,20 @@ import { ScriptConverterComponent } from './pages/script-converter/script-conver
 import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.component'
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
 import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
+import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher.component'
 
-const routes: Routes = [
+export const routes: Routes = [
 	{ path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
-	{ path: 'roman-numerals-converter', component: RomanNumeralsConverterComponent },
+	{
+		path: 'roman-numerals-converter',
+		component: RomanNumeralsConverterComponent,
+	},
 	{ path: 'script-converter', component: ScriptConverterComponent },
 	{ path: 'calculator', component: CalculatorComponent },
 	{ path: 'pomodoro-timer', component: PomodoroTimerComponent },
 	{ path: 'sieve-of-eratosthenes', component: SieveOfEratosthenesComponent },
 	{ path: 'currency-converter', component: CurrencyConverterComponent },
+	{ path: 'vigenere-cipher', component: VigenereCipherComponent },
 ]
 
 @NgModule({

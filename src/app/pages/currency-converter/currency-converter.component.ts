@@ -1,6 +1,8 @@
-import { getLocaleCurrencySymbol } from '@angular/common'
-import { Component, KeyValueDiffer, KeyValueDiffers, OnInit } from '@angular/core'
-import getSymbolFromCurrency from 'currency-symbol-map'
+import {
+	Component,
+	KeyValueDiffer,
+	KeyValueDiffers,
+} from '@angular/core'
 import { CurrencyRatesService } from 'src/app/services/currency-rates.service'
 
 @Component({
@@ -63,7 +65,9 @@ export class CurrencyConverterComponent {
 
 		const amountInUsd = amountInput / this.fromCurrencyRateInUSD
 
-		this.convertedAmount = Number((amountInUsd * this.toCurrencyRateInUSD).toFixed(2))
+		this.convertedAmount = Number(
+			(amountInUsd * this.toCurrencyRateInUSD).toFixed(2)
+		)
 	}
 
 	public swapDirection() {
