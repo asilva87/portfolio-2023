@@ -1,35 +1,40 @@
 <div class="content-wrapper">
-	<mat-form-field class="input-row" [formGroup]="myForm">
-		<mat-label>Enter a number</mat-label>
+	<mat-card>
+		<mat-card-content>
+			<div>
+				<h1>Indo-arabic to roman numerals converter</h1>
+				<div class="explanation-wrapper">This app converts indo-arabic numers into their roman respective values.</div>
+				<div class="explanation-wrapper">As per the nature of roman numerals, they're limited to the maximum of 3999, as
+					there's no period correct roman numeral for 5000 and beyond.</div>
+				<div class="explanation-wrapper">Therefore, during mediæval, new glyphs were invented to deal with values larger
+					than 3999.</div>
+				<div class="explanation-wrapper">This group of glyphs is called <strong>Apostrophus</strong>, so if you
+					see
+					some never-before-seen glyphs,
+					that's the reason.
+				</div>
+			</div>
 
-		<input matInput maxlength="7" type="text" formControlName="myNumberInput" (keydown)="onKeyDown($event)"
-			(input)="convertToRoman($event)" aria-label="Input text for indo-arabic numeral" [errorStateMatcher]="matcher"
-			color="accent" />
+			<mat-form-field class="input-row" [formGroup]="myForm">
+				<mat-label>Enter a number</mat-label>
 
-		<button *ngIf="myForm.get('myNumberInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
-			(click)="clearInput()">
-			<mat-icon>close</mat-icon>
-		</button>
+				<input matInput maxlength="7" type="text" formControlName="myNumberInput" (keydown)="onKeyDown($event)"
+					(input)="convertToRoman($event)" aria-label="Input text for indo-arabic numeral" [errorStateMatcher]="matcher"
+					color="accent" />
 
-		<mat-error *ngIf="myForm.get('myNumberInput')?.invalid">
-			Please enter a valid number
-		</mat-error>
-	</mat-form-field>
+				<button *ngIf="myForm.get('myNumberInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
+					(click)="clearInput()">
+					<mat-icon>close</mat-icon>
+				</button>
 
-	<!-- <div class="input-toggle">
-		<mat-button-toggle-group appearance="legacy"
-			aria-label="Toggle that switches between mediaevel Apostrophus and Vinculum glyphs for numbers above 3999"
-			[(ngModel)]="largeNumbersMode" (ngModelChange)="onToggleChange($event)">
-			<mat-button-toggle value="vinculum">Vinculum</mat-button-toggle>
-			<mat-button-toggle value="apostrophus">Apostrophus</mat-button-toggle>
-		</mat-button-toggle-group>
-	</div> -->
+				<mat-error *ngIf="myForm.get('myNumberInput')?.invalid">
+					Please enter a valid number
+				</mat-error>
+			</mat-form-field>
 
-	<mat-card *ngIf="myForm.get('myNumberInput')?.value !== '0' || myForm.get('myNumberInput')?.valid">
-		<mat-card-header>
-			<mat-card-title>
+			<div *ngIf="myForm.get('myNumberInput')?.value !== '0' || myForm.get('myNumberInput')?.valid">
 				<h1>{{ romanNumber }}</h1>
-			</mat-card-title>
-		</mat-card-header>
+			</div>
+		</mat-card-content>
 	</mat-card>
 </div>

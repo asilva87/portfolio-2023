@@ -93,7 +93,7 @@ export class PomodoroTimerComponent {
 			this.minutes = minutes < 10 ? `0${minutes}` : minutes.toString()
 			this.secondsDisplay = this.seconds.toString().split('')
 			this.minutesDisplay = this.minutes.toString().split('')
-		}, 100)
+		}, 1000)
 	}
 
 	public stopTimer(): void {

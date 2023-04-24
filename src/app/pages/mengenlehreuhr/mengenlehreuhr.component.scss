@@ -1,0 +1,20 @@
+.explanation-wrapper {
+  margin: 1rem;
+  overflow-wrap: break-word;
+  max-width: 40vw;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.content.block {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  padding: 2rem;
+}
