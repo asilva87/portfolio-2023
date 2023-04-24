@@ -1,9 +1,16 @@
 .input-row {
-  display: flex;
-  justify-content: space-around;
-}
-
-.input-toggle {
+  margin-top: 2rem;
+  margin-bottom: 0;
   display: flex;
   justify-content: center;
+}
+
+mat-card {
+  max-width: 80vw;
+}
+
+.explanation-wrapper {
+  margin: 1rem;
+  overflow-wrap: break-word;
+  max-width: 40vw;
 }

@@ -1,9 +1,18 @@
 <mat-card>
+	<mat-card-header>
+		<h1>Pomodoro Timer</h1>
+	</mat-card-header>
+
+	<div class="explanation-wrapper">
+		This is a simple Pomodoro timer that works in the (25-5-25-5-25-30) timing strategy. Besides, it has indicators that
+		show in which round you are.
+	</div>
+
 	<mat-card-content>
 		<!-- Timer progress display -->
 		<div class="timer">
 			<div>
-				<div class="display-container">
+				<div>
 					<div class="timer__progress-display">
 						<div [style.background-color]="period.active ? period.type : 'lightgray'"
 							class="timer__progress-display__indicator" *ngFor="let period of periods">
@@ -13,12 +22,14 @@
 			</div>
 
 			<!-- Timer -->
-			<div class="timer__display">
-				<app-display-cell *ngFor="let minutes of minutesDisplay" [numberToDisplay]="minutes"></app-display-cell>
+			<div style="padding: 0 10rem">
+				<div class="timer__display__wrapper">
+					<app-display-cell *ngFor="let minutes of minutesDisplay" [numberToDisplay]="minutes"></app-display-cell>
 
-				<app-display-cell numberToDisplay=":"></app-display-cell>
+					<app-display-cell numberToDisplay=":"></app-display-cell>
 
-				<app-display-cell *ngFor="let number of secondsDisplay" [numberToDisplay]="number"></app-display-cell>
+					<app-display-cell *ngFor="let number of secondsDisplay" [numberToDisplay]="number"></app-display-cell>
+				</div>
 			</div>
 		</div>
 

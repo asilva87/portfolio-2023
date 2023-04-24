@@ -1,44 +1,63 @@
-<div class="content-wrapper">
-	<!-- Input -->
-	<div class="prime-numbers-input">
-		<mat-form-field class="prime-numbers-form" [formGroup]="numberInputForm">
-			<mat-label>Number input:</mat-label>
+<mat-card>
+	<mat-card-header>
+		<h1>Sieve of Eratosthenes</h1>
+	</mat-card-header>
 
-			<input matInput maxlength="4" type="text" formControlName="numberInput" (keydown)="onKeyDown($event)"
-				(input)="findPrimeNumbers($event)" aria-label="Input text for number up to which prime numbers should be found."
-				[errorStateMatcher]="matcher" color="accent" />
-
-			<button *ngIf="numberInputForm.get('numberInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
-				(click)="clearInput()">
-				<mat-icon>close</mat-icon>
-			</button>
-
-			<mat-error *ngIf="numberInputForm.get('numberInput')?.invalid">
-				Please enter a valid number
-			</mat-error>
-		</mat-form-field>
+	<div class="explanation-wrapper">
+		The <span
+			matTooltip="A process, physical or abstract, that arrives at a final result by filtering out unwanted pieces of input from a larger starting set of input."><em
+				class="tooltip-source">Sieve</em></span>
+		of Eratosthenes is ancient algorithm used to find all prime numbers up to the input value.
 	</div>
 
-	<!-- Result -->
-	<mat-card>
-		<mat-card-header>
-			<mat-card-title class="mat-card-title">
-				<span class="prime-numbers-container__counter" *ngIf="primes.length > 1">{{ primes.length }} prime number{{
-					primes.length ? 's' : ''
-					}}
-					found.</span><br />
-				<span *ngIf="primes.length <= 1">No results found.</span><br />
-			</mat-card-title>
-		</mat-card-header>
+	<div class="explanation-wrapper">
+		It works by marking all composite numbers in a loop up to the input value. The unmarked ones are then considered
+		prime.
+	</div>
 
-		<mat-card-content>
-			<div class="prime-numbers-container">
-				<div class="prime-numbers-container__result">
-					<span *ngFor="let number of primes; let i = index">
-						<i>{{ number }}{{ i !== primes.length - 1 ? ', ' : '.' }}</i>
-					</span>
+	<div class="content-wrapper">
+		<!-- Input -->
+		<div class="prime-numbers-input">
+			<mat-form-field class="prime-numbers-form" [formGroup]="numberInputForm">
+				<mat-label>Number input:</mat-label>
+
+				<input matInput maxlength="4" type="text" formControlName="numberInput" (keydown)="onKeyDown($event)"
+					(input)="findPrimeNumbers($event)"
+					aria-label="Input text for number up to which prime numbers should be found." [errorStateMatcher]="matcher"
+					color="accent" />
+
+				<button *ngIf="numberInputForm.get('numberInput')?.value.length > 0" matSuffix mat-icon-button
+					aria-label="Clear" (click)="clearInput()">
+					<mat-icon>close</mat-icon>
+				</button>
+
+				<mat-error *ngIf="numberInputForm.get('numberInput')?.invalid">
+					Please enter a valid number
+				</mat-error>
+			</mat-form-field>
+		</div>
+
+		<!-- Result -->
+		<mat-card>
+			<mat-card-header>
+				<mat-card-title class="mat-card-title">
+					<span class="prime-numbers-container__counter" *ngIf="primes.length > 1">{{ primes.length }} prime number{{
+						primes.length ? 's' : ''
+						}}
+						found.</span><br />
+					<span *ngIf="primes.length <= 1">No results found.</span><br />
+				</mat-card-title>
+			</mat-card-header>
+
+			<mat-card-content>
+				<div class="prime-numbers-container">
+					<div class="prime-numbers-container__result">
+						<span *ngFor="let number of primes; let i = index">
+							<i>{{ number }}{{ i !== primes.length - 1 ? ', ' : '.' }}</i>
+						</span>
+					</div>
 				</div>
-			</div>
-		</mat-card-content>
-	</mat-card>
-</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</mat-card>

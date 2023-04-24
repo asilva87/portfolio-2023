@@ -7,6 +7,7 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	margin-top: 1rem;
 }
 
 .prime-numbers-container__counter {
@@ -16,4 +17,15 @@
 mat-card-title {
 	line-height: 14px !important;
 	margin-bottom: 1rem;
+}
+
+.explanation-wrapper {
+	margin: 1rem;
+	overflow-wrap: break-word;
+	max-width: 40vw;
+}
+
+.tooltip-source {
+	text-decoration: underline;
+	text-decoration-style: dotted;
 }

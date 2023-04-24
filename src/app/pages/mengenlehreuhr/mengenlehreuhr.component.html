@@ -1,19 +1,57 @@
-<div>
-	<!-- Seconds row -->
-	<div class="display-container">
-		<app-clock-row [repetitions]="1" [activeCells]="secondsActive" [largeCell]="true"
-			[secondsCell]="true"></app-clock-row>
+<mat-card>
+	<div class="content-block">
+		<mat-card-header>
+			<h1>Mengenlehreuhr</h1>
+		</mat-card-header>
+		<mat-card-content>
+			<!-- Explanation -->
+			<div class="explanation-wrapper">
+				This is a replication of the famous <strong>Mengenlehreuhr</strong> located in Berlin.
+			</div>
+			<div class="explanation-wrapper">
+				<div>It functions like so:</div>
+
+				<table class="explanation-wrapper">
+					<tr>
+						<td>Round light represents seconds.</td>
+					<tr>
+						<td>First row, each block represents 5 hours.</td>
+					</tr>
+					<tr>
+						<td>Second row, each block represents 1 hour.</td>
+					</tr>
+					<tr>
+						<td>Third row, each block represents 5 minutes.</td>
+					</tr>
+					<tr>
+						<td>Fourth row, each block represents 1 minute.</td>
+					</tr>
+				</table>
+
+				<div class="explanation-wrapper">You read it by adding the 5 hours blocks, then the 1 hour blocks, following by
+					the 5 hours blocks and the 1 minute blocks.
+				</div>
+			</div>
+		</mat-card-content>
 	</div>
 
-	<!-- Five hours row -->
-	<app-clock-row [repetitions]="4" [activeCells]="fiveHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
+	<div class="content-block clock">
+		<!-- Seconds row -->
+		<div class="display-container">
+			<app-clock-row [repetitions]="1" [activeCells]="secondsActive" [largeCell]="true"
+				[secondsCell]="true"></app-clock-row>
+		</div>
 
-	<!-- Unit hours row -->
-	<app-clock-row [repetitions]="4" [activeCells]="unitHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
+		<!-- Five hours row -->
+		<app-clock-row [repetitions]="4" [activeCells]="fiveHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
 
-	<!-- Five minutes row -->
-	<app-clock-row [repetitions]="11" [activeCells]="fiveMinutesActive" [isFiveMinutes]="true"></app-clock-row>
+		<!-- Unit hours row -->
+		<app-clock-row [repetitions]="4" [activeCells]="unitHoursActive" [largeCell]="true" [isDark]="true"></app-clock-row>
 
-	<!-- Unit minutes row -->
-	<app-clock-row [repetitions]="4" [activeCells]="unitMinutesActive" [largeCell]="true"></app-clock-row>
-</div>
+		<!-- Five minutes row -->
+		<app-clock-row [repetitions]="11" [activeCells]="fiveMinutesActive" [isFiveMinutes]="true"></app-clock-row>
+
+		<!-- Unit minutes row -->
+		<app-clock-row [repetitions]="4" [activeCells]="unitMinutesActive" [largeCell]="true"></app-clock-row>
+	</div>
+</mat-card>
