@@ -30,16 +30,14 @@ export class VigenereCipherComponent implements OnInit {
 	public textInputForm: FormGroup
 	public alphabetMatrix: AlphabetObject[][] = []
 	public matcher = new VigenereInputErrorStateMatcher()
+	public encipheredText: string = ''
+	public originalText = ''
+	private resolvedKey = ''
 
 	constructor() {
 		this.textInputForm = new FormGroup({
-			textInput: new FormControl(
-				'0',
-				Validators.compose([
-					Validators.maxLength(4),
-					Validators.pattern('^[A-Z]*$'),
-				])
-			),
+			textInput: new FormControl('', Validators.pattern('^[a-zA-Z]+$')),
+			keyInput: new FormControl('', Validators.pattern('^[a-zA-Z]+$')),
 		})
 	}
 
@@ -47,7 +45,7 @@ export class VigenereCipherComponent implements OnInit {
 		this.alphabetMatrixInit()
 	}
 
-	private alphabetMatrixInit() {
+	private alphabetMatrixInit(): void {
 		let alphabet: AlphabetObject[] = []
 		let alphabetIndex = 0
 		let firstLetters: AlphabetObject[] = []
@@ -91,14 +89,73 @@ export class VigenereCipherComponent implements OnInit {
 
 			alphabetIndex++
 		}
-		console.log(this.alphabetMatrix)
 	}
 
-	public encipher(event: Event) {
+	private resolveKey(key: string): void {
+		if (!key) return
 
+		let resolvedKey = "";
+
+		while (resolvedKey.length < this.originalText.length) {
+			resolvedKey += key.charAt((resolvedKey.length) % key.length);
+		}
+
+		this.resolvedKey = resolvedKey.toUpperCase()
+	}
+
+	public onInput(event: Event, inputType: string): void {
+		const input = event.target as HTMLInputElement
+		let value = input.value
+
+		if (inputType === 'originalText') {
+			this.originalText = value
+			if ((event as KeyboardEvent).key === 'Backspace') {
+				if (this.originalText.length !== 0) {
+					this.originalText = this.originalText.slice(0, this.originalText.length - 1)
+				}
+			} else {
+				if (this.resolvedKey.length !== 0) {
+					this.resolvedKey = this.resolvedKey.slice(0, this.resolvedKey.length - 1)
+				}
+			}
+		}
+		if (inputType === 'keyText') this.resolveKey(value)
 	}
 
 	public clearInput() {
-		this.textInputForm.get('numberInput')?.setValue('0')
+		this.textInputForm.get('textInput')?.setValue('')
+		this.textInputForm.get('keyInput')?.setValue('')
+		this.originalText = ''
+		this.resolvedKey = ''
+	}
+
+	public encipher() {
+		// This removes the first row, which is just the names for the columns.
+		const matrixNoColumnNames = this.alphabetMatrix.slice(1)
+		let currentAlphabet: AlphabetObject[] | undefined = []
+		this.originalText = this.originalText.toUpperCase()
+		let cipherLetterObj: AlphabetObject | undefined
+		let cipherLetterObjIndex: number = 0
+
+		for (let i = 0; i < this.originalText.length; i++) {
+			// Find row alphabet whose first letter is the same as the current letter
+			// of the original text.
+			for (let j = 0; j < matrixNoColumnNames.length; j++) {
+				if (matrixNoColumnNames[j][i].letter === this.originalText[i]) {
+					currentAlphabet = matrixNoColumnNames[j].slice(1)
+				}
+
+				for (let k = 1; k < this.alphabetMatrix[0].length - 1; k++) {
+					if (this.alphabetMatrix[0][k].letter === this.resolvedKey[i]) {
+						cipherLetterObjIndex = k
+
+						this.alphabetMatrix[i + 1][k].marked = true
+					}
+				}
+			}
+
+			this.encipheredText += currentAlphabet[cipherLetterObjIndex - 1].letter
+			console.log(this.encipheredText)
+		}
 	}
 }
