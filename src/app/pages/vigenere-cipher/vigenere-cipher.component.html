@@ -1,58 +1,79 @@
-<!-- Input and output -->
-<mat-card>
-  <mat-card-content class="vigenere-number-form">
-    <mat-form-field class="textInput" [formGroup]="textInputForm">
+<div class="vigenere-content__wrapper">
+  <!-- Input and output -->
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title class="vigenere-content__wrapper__title">
+        Vigenere Cipher
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="vigenere-number-form">
       <!-- Text Input -->
-      <mat-label>Original text input:</mat-label>
-      <input matInput type="text" formControlName="textInput" (input)="onInput($event, 'originalText')"
-        aria-label="Input text for the original text to be enciphered." [errorStateMatcher]="matcher" color="accent" />
-      <button *ngIf="textInputForm.get('textInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
-        (click)="clearInput()">
-        <mat-icon>close</mat-icon>
-      </button>
-      <mat-error *ngIf="textInputForm.get('textInput')?.invalid">
-        Please enter a valid text (no numbers or symbols)
-      </mat-error>
-    </mat-form-field>
+      <mat-form-field class="textInput" [formGroup]="textInputForm">
+        <mat-label>Original text input:</mat-label>
+        <input matInput type="text" formControlName="textInput" (input)="onInput($event, 'originalText')"
+          aria-label="Input text for the original text to be enciphered." [errorStateMatcher]="matcher"
+          color="accent" />
+        <button *ngIf="textInputForm.get('textInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
+          (click)="clearInput()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="textInputForm.get('textInput')?.invalid">
+          Please enter a valid text (no numbers or symbols)
+        </mat-error>
+      </mat-form-field>
 
-    <mat-form-field class="textInput" [formGroup]="textInputForm">
       <!-- Key input -->
-      <mat-label>Cipher key input:</mat-label>
-      <input matInput [maxlength]="originalText.length" type="text" formControlName="keyInput"
-        (input)="onInput($event, 'keyText')" aria-label="Key to be used in the enciphering process."
-        [errorStateMatcher]="matcher" color="accent" />
-      <button *ngIf="textInputForm.get('keyInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
-        (click)="clearInput()">
-        <mat-icon>close</mat-icon>
-      </button>
-      <mat-error *ngIf="textInputForm.get('keyInput')?.invalid">
-        Please enter a valid text (no numbers or symbols)
-      </mat-error>
-    </mat-form-field>
-  </mat-card-content>
+      <mat-form-field class="textInput" [formGroup]="textInputForm">
+        <mat-label>Cipher key input:</mat-label>
+        <input matInput [maxlength]="originalText.length" type="text" formControlName="keyInput"
+          (input)="onInput($event, 'keyText')" aria-label="Key to be used in the enciphering process."
+          [errorStateMatcher]="matcher" color="accent" />
+        <button *ngIf="textInputForm.get('keyInput')?.value.length > 0" matSuffix mat-icon-button aria-label="Clear"
+          (click)="clearInput()">
+          <mat-icon>close</mat-icon>
+        </button>
+        <mat-error *ngIf="textInputForm.get('keyInput')?.invalid">
+          Please enter a valid text (no numbers or symbols)
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
 
-  <button mat-button mat-stroked-button (click)="encipher()">
-    <span>Encipher</span>
-  </button>
+    <button mat-button mat-stroked-button (click)="encipher()">
+      <span>Encipher</span>
+    </button>
 
-  <div class="enciphered-text">
-    {{encipheredText}}
-  </div>
-</mat-card>
+    <div class="enciphered-text">
+      {{encipheredText}}
+    </div>
 
+    <div class="explanation-wrapper">
+      <em>The matrix on the right contains a bug for which a ticket has already been created.</em>
+    </div>
 
+    <div class="explanation-wrapper">
+      This is the Vigenere cipher. It is a method of encrypting alphabetic texts. It uses a series of alphabets, with
+      each permutating one letter to the left. It is therefore a <strong>Polyalphabetic Substitution</strong> algorithm,
+      as it replaces a letter from the original text with another provided by the key.
+    </div>
 
-<!-- Alphabet matrix marked letters display -->
-<mat-card>
-  <mat-card-content>
-    <div *ngFor="let alphabet of alphabetMatrix; let alphabetIndex = index" class="alphabet-matrix__row"
-      [class.alphabet-matrix__row--cell--bordered]="alphabetIndex === 0">
-      <div *ngFor="let letterObj of alphabet; let letterIndex = index">
-        <div class="alphabet-matrix__row--cell" [class.alphabet-matrix__row--cell--marked]="letterObj.marked"
-          [class.alphabet-matrix__row--cell--bordered]="letterIndex === 0">
-          {{letterObj.letter}}
+    <div class="explanation-wrapper">
+      After the text is input, the cipher, if it has shorter than the original text, is expanded to match it in length.
+      Then a loop is performed for each letter of the original text, until every letter has been replace (encrypted).
+    </div>
+  </mat-card>
+
+  <!-- Alphabet matrix marked letters display -->
+  <mat-card>
+    <mat-card-content>
+      <div *ngFor="let alphabet of alphabetMatrix; let alphabetIndex = index" class="alphabet-matrix__row"
+        [class.alphabet-matrix__row__cell--bordered]="alphabetIndex === 0">
+        <div *ngFor="let letterObj of alphabet; let letterIndex = index">
+          <div class="alphabet-matrix__row__cell" [class.alphabet-matrix__row__cell--marked]="letterObj.marked"
+            [class.alphabet-matrix__row__cell--bordered]="letterIndex === 0">
+            {{letterObj.letter}}
+          </div>
         </div>
       </div>
-    </div>
-  </mat-card-content>
-</mat-card>
+    </mat-card-content>
+  </mat-card>
+</div>

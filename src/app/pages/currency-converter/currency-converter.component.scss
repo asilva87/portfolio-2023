@@ -1,0 +1,24 @@
+mat-card {
+  padding: 1rem;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+mat-icon {
+  margin: .2rem !important;
+}
+
+button {
+  padding: 1rem 0;
+}
+
+.explanation-wrapper {
+  overflow-wrap: break-word;
+  max-width: 40vw;
+  margin-bottom: 1rem;
+}
