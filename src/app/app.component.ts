@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core'
 import { Router, NavigationEnd } from '@angular/router'
 import { routes } from './app-routing.module'
 import { FormatStringService } from './services/format-string.service'
-import { Observable, forkJoin, map } from 'rxjs'
+import { forkJoin, map } from 'rxjs'
+
+import { colors } from './colors'
 
 @Component({
 	selector: 'app-root',
@@ -21,6 +23,7 @@ export class AppComponent implements OnInit {
 	]
 	public showSideNav = false
 	public currentUrl = ''
+	public backgroundColor = ''
 	public routesLocal: Record<string, string>[] = []
 
 	constructor(
@@ -50,6 +53,21 @@ export class AppComponent implements OnInit {
 		this.router.events.subscribe(event => {
 			if (event instanceof NavigationEnd) {
 				this.currentUrl = event.url
+
+				switch (event.url) {
+					case '/':
+						this.backgroundColor = colors.SPL_PLUM_PURPLE;
+						break;
+					case '/about':
+						this.backgroundColor = 'green';
+						break;
+					case '/contact':
+						this.backgroundColor = 'blue';
+						break;
+					default:
+						this.backgroundColor = 'white';
+						break;
+				}
 			}
 		})
 	}

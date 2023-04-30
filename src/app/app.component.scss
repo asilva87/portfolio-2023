@@ -24,8 +24,8 @@ button {
 	justify-content: center;
 	align-items: center;
 	width: 100vw;
-	height: 80vh;
-	font-size: 1rem;
+	height: 100vh;
+	font-size: 2rem;
 }
 
 .introduction {
@@ -36,4 +36,8 @@ button {
 
 .explanation-wrapper {
 	padding: 1rem;
+}
+
+.splash__background-color {
+	background-color: var(--BTN_PALE_CANARY)
 }

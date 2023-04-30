@@ -9,8 +9,10 @@ import { PomodoroTimerComponent } from './pages/pomodoro-timer/pomodoro-timer.co
 import { SieveOfEratosthenesComponent } from './pages/sieve-of-eratosthenes/sieve-of-eratosthenes.component'
 import { CurrencyConverterComponent } from './pages/currency-converter/currency-converter.component'
 import { VigenereCipherComponent } from './pages/vigenere-cipher/vigenere-cipher.component'
+import { SplashComponent } from './pages/splash/splash.component'
 
 export const routes: Routes = [
+	{ path: '', component: SplashComponent },
 	{ path: 'mengenlehreuhr', component: MengenlehreuhrComponent },
 	{
 		path: 'roman-numerals-converter',
@@ -28,7 +30,7 @@ export const routes: Routes = [
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
 
 // This is the main routing module of an Angular application. It imports the Angular NgModule decorator,
 // as well as the RouterModule and Routes interfaces from @angular/router.

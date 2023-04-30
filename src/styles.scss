@@ -1,14 +1,113 @@
 /* You can add global styles to this file, and also import other style files */
+
 @font-face {
-	font-family: 'Ubuntu Regular';
-	src: url('./assets/fonts/Ubuntu-Regular.ttf') format('truetype');
+	font-family: 'AlegreyaSans';
+	src: url('./assets/fonts/AlegreyaSans-Light.ttf') format('truetype');
 }
+
+@font-face {
+	font-family: 'EurostileBoldExtended';
+	src: url('./assets/fonts/EurostileBoldExtended.ttf') format('truetype');
+}
+
+// SPL (SPLASH) = SPLASH SCREENS BACKGROUND COLOURS
+// GPH (GRAPH) = COLORS USED IN GRAPHS
+// BTN (BUTTON) = COLORS USED IN BUTTON-LIKE ELEMENTS
+// DTS (DETAILS) = DETAILS SCREENS BACKGROUND COLOURS
+$BTN_BLUE_DIAMOND: '#4EE2EC';
+$BTN_PALE_CANARY: '#FEFF94';
+$BTN_TRON_BLUE: '#75FFFF';
+$BTN_YELLOWISH_TAN: '#FCFC81';
+$GPH_BASHFUL_PINK: '#C25283';
+$GPH_FOUNTAIN_BLUE: '#56B4BE';
+$GPH_LIGHT_CORAL: '#F28386';
+$GPH_PERSIAN_GREEN: '#00A693';
+$GPH_TOPAZ: '#15C1A2';
+$DTS_CACTUS: '#436F4A';
+$DTS_CASAL: '#265D62';
+$DTS_CHATHAMS_BLUE: '#244F70';
+$DTS_COBALT: '#294195';
+$DTS_CORNELL_RED: '#B8131F';
+$DTS_DEEP_CARMINE: '#9E214C';
+$DTS_FUCHSIA_BLUE: '#7A54B1';
+$DTS_GLACIAL_BLUE: '#368BC1';
+$DTS_SAPPHIRE_COPPER: '#672728';
+$DTS_STORM_DUST: '#656263';
+$DTS_WOODY_BROWN: '#492A3F';
+$SPL_CARMINE: '#9D0032';
+$SPL_DARK_GREY_BLUE: '#2C5259';
+$SPL_GRAPE: '#733964';
+$SPL_GRAVEL: '#494450';
+$SPL_HALLOWEEN_ORANGE: '#F46325';
+$SPL_AQUA_DEEP: '#074A42';
+$SPL_KASHMIR_BLUE: '#4C679C';
+$SPL_MIDNIGHT: '#011635';
+$SPL_MIRAGE_BLACK: '#161928';
+$SPL_PLUM_PURPLE: '#52316B';
+$SPL_RHINO: '#31375A';
+$SPL_RICH_LILAC: '#B666D2';
+$SPL_SAPPHIRE: '#1E31A5';
+$IVORY: '#FFFFF0';
+
+:root {
+	--BTN_BLUE_DIAMOND: '#4EE2EC';
+	--BTN_PALE_CANARY: '#FEFF94';
+	--BTN_TRON_BLUE: '#75FFFF';
+	--BTN_YELLOWISH_TAN: '#FCFC81';
+	--GPH_BASHFUL_PINK: '#C25283';
+	--GPH_FOUNTAIN_BLUE: '#56B4BE';
+	--GPH_LIGHT_CORAL: '#F28386';
+	--GPH_PERSIAN_GREEN: '#00A693';
+	--GPH_TOPAZ: '#15C1A2';
+	--DTS_CACTUS: '#436F4A';
+	--DTS_CASAL: '#265D62';
+	--DTS_CHATHAMS_BLUE: '#244F70';
+	--DTS_COBALT: '#294195';
+	--DTS_CORNELL_RED: '#B8131F';
+	--DTS_DEEP_CARMINE: '#9E214C';
+	--DTS_FUCHSIA_BLUE: '#7A54B1';
+	--DTS_GLACIAL_BLUE: '#368BC1';
+	--DTS_SAPPHIRE_COPPER: '#672728';
+	--DTS_STORM_DUST: '#656263';
+	--DTS_WOODY_BROWN: '#492A3F';
+	--SPL_CARMINE: '#9D0032';
+	--SPL_DARK_GREY_BLUE: '#2C5259';
+	--SPL_GRAPE: '#733964';
+	--SPL_GRAVEL: '#494450';
+	--SPL_HALLOWEEN_ORANGE: '#F46325';
+	--SPL_AQUA_DEEP: '#074A42';
+	--SPL_KASHMIR_BLUE: '#4C679C';
+	--SPL_MIDNIGHT: '#011635';
+	--SPL_MIRAGE_BLACK: '#161928';
+	--SPL_PLUM_PURPLE: '#52316B';
+	--SPL_RHINO: '#31375A';
+	--SPL_RICH_LILAC: '#B666D2';
+	--SPL_SAPPHIRE: '#1E31A5';
+	--IVORY: '#FFFFF0';
+}
+
 
 html,
 body {
 	height: 100%;
-}
-body {
 	margin: 0;
-	font-family: 'Ubuntu Regular', Roboto, 'Helvetica Neue', sans-serif;
+	font-family: 'AlegreyaSans', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.basic-btn-shape {
+	border-radius: .5vw;
+	font-family: 'EurostileBoldExtended';
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 3%;
+	font-size: 5vw;
+	background-color: white;
+	padding: 1.5vw 2.5vw 0.3vw 2.5vw;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
 }
